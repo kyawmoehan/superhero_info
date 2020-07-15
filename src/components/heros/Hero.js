@@ -1,9 +1,12 @@
 import React from "react";
+import LazyLoad from "react-lazyload";
 
 const Hero = ({ hero }) => {
   return (
     <div className="card">
-      <img src={hero.images.sm} alt={hero.name} />
+      <LazyLoad offset={1200}>
+        <img src={hero.images.sm} alt={hero.name} />
+      </LazyLoad>
       <div className="info">
         <h1>{hero.name}</h1>
         <p>First Appearance : {hero.biography.firstAppearance}</p>

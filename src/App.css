@@ -6,7 +6,8 @@
 
 html,
 body {
-  background: #000 url("images/f2.png") no-repeat center center/cover;
+  background-color: #79c9f2;
+  background: #000 url("images/bg.png") no-repeat center center/cover;
   height: 100vh;
   color: #fff;
   font-family: Arial, Helvetica, sans-serif;
@@ -35,31 +36,26 @@ a {
 }
 
 header {
-  height: 100px;
+  /* height: 100px; */
+  margin-top: 1.5rem;
 }
 
 header img {
-  width: 60px;
+  width: 40px;
+}
+
+.header-title {
+  color: rgb(255, 255, 255);
+  font-size: 4em;
+  padding-top: 0;
+  padding-bottom: 0.8em;
 }
 
 .center {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-}
-
-.search {
-  height: 100px;
-}
-
-input[type="text"] {
-  display: block;
-  padding: 10px;
-  font-size: 20px;
-  border: 0;
-  border-radius: 5px;
-  width: 60%;
-  margin: auto;
 }
 
 .cards {
@@ -156,15 +152,25 @@ input[type="text"] {
   color: black;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 910px) {
+  .cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 750px) {
   .cards {
     grid-template-columns: repeat(2, 1fr);
+  }
+  .header-title {
+    font-size: 3em;
+    padding-bottom: 0.6em;
   }
 }
 
 @media (max-width: 500px) {
-  input[type="text"] {
-    width: 100%;
+  .header-title {
+    font-size: 2.5em;
+    padding-bottom: 0.5em;
   }
   .cards {
     grid-template-columns: 1fr;
