@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Spinner from "../ui/Spinner";
 import Hero from "./Hero";
+import PageUp from "../ui/PageUp";
 
 const HerosDisplay = () => {
   const [heros, setHeros] = useState([]);
@@ -12,7 +13,6 @@ const HerosDisplay = () => {
         "https://cdn.rawgit.com/akabab/superhero-api/0.2.0/api/all.json"
       );
       const data = await response.json();
-      console.log(data);
       setHeros(data);
       setIsLoading(false);
     };
@@ -26,6 +26,7 @@ const HerosDisplay = () => {
       {heros.map((hero) => (
         <Hero key={hero.id} hero={hero} />
       ))}
+      <PageUp />
     </section>
   );
 };

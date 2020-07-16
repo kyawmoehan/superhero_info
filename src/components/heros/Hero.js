@@ -1,5 +1,6 @@
 import React from "react";
 import LazyLoad from "react-lazyload";
+import { Link } from "@reach/router";
 
 const Hero = ({ hero }) => {
   return (
@@ -12,7 +13,9 @@ const Hero = ({ hero }) => {
         <p>First Appearance : {hero.biography.firstAppearance}</p>
         <p>Publisher : {hero.biography.publisher}</p>
         <p>Alignment: {hero.biography.alignment}</p>
-        <button>Read More</button>
+        <Link to={`/details/${hero.id}`} className="btn">
+          Read More
+        </Link>
       </div>
     </div>
   );
