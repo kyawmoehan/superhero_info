@@ -22,10 +22,45 @@ const HeroDetails = ({ id }) => {
   return isLoading ? (
     <Spinner />
   ) : (
-    <>
-      <h1>{hero.name}</h1>
+    <div className="hero-details">
       <img src={hero.images.sm} alt={hero.name} />
-    </>
+      <div className="hero-card-info">
+        <h2>{hero.name}</h2>
+        <div className="primary-title">
+          <p>Publisher:</p>
+          <p>{hero.biography.publisher}</p>
+        </div>
+        <div className="primary-title">
+          <p>Full Name:</p>
+          <p>{hero.biography.fullName}</p>
+        </div>
+        <div className="primary-title">
+          <p>First Appearance:</p>
+          <p>{hero.biography.firstAppearance}</p>
+        </div>
+        <div className="primary-title">
+          <p>Alignment: </p>
+          <p>{hero.biography.alignment}</p>
+        </div>
+        <div className="primary-title">
+          <p>Race: </p>
+          <p>{hero.appearance.race}</p>
+        </div>
+        <div className="primary-title">
+          <p>Groups: </p>
+          <p>{hero.connections.groupAffiliation}</p>
+        </div>
+        <div className="primary-title">
+          <p>Works: </p>
+          <p>{hero.work.occupation}</p>
+        </div>
+        {/* {Object.entries(hero.powerstats).map((key) => (
+          <p key={key[0]}>
+            {key[0].charAt(0).toUpperCase() + key[0].slice(1)}: {key[1]}
+          </p>
+        ))} */}
+      </div>
+    </div>
   );
 };
 
