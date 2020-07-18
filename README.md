@@ -1,5 +1,9 @@
 # SuperHero Info App with React
 
+The project use Super Heros API from https://akabab.github.io/superhero-api/api/ to get Information about SuperHeros.
+
+![SuprHeros](./superhero.png)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

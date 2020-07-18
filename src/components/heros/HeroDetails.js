@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "@reach/router";
 import Spinner from "../ui/Spinner";
+import BackArrow from "../../images/back.svg";
 
 const HeroDetails = ({ id }) => {
   const [hero, setHero] = useState([]);
@@ -54,11 +56,16 @@ const HeroDetails = ({ id }) => {
           <p>Works: </p>
           <p>{hero.work.occupation}</p>
         </div>
-        {/* {Object.entries(hero.powerstats).map((key) => (
-          <p key={key[0]}>
-            {key[0].charAt(0).toUpperCase() + key[0].slice(1)}: {key[1]}
-          </p>
-        ))} */}
+        <div className="hero-powers">
+          {Object.entries(hero.powerstats).map((key) => (
+            <p key={key[0]}>
+              {key[0].charAt(0).toUpperCase() + key[0].slice(1)}: {key[1]}
+            </p>
+          ))}
+        </div>
+        <Link to="/" className="back-arrow">
+          <img src={BackArrow} alt="Back Arrow" />
+        </Link>
       </div>
     </div>
   );

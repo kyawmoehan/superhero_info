@@ -1,3 +1,30 @@
+@font-face {
+  font-family: "Raider";
+  src: url("./fonts/raider-crusader-font/RaiderCrusaderHalftone-5ZRz.otf")
+    format("opentype");
+}
+
+/* roboto-mono-700 - latin */
+@font-face {
+  font-family: "Roboto Mono";
+  font-style: normal;
+  font-weight: 700;
+  src: url("./fonts/roboto-mono/roboto-mono-v12-latin-700.eot"); /* IE9 Compat Modes */
+  src: local(""),
+    url("./fonts/roboto-mono/roboto-mono-v12-latin-700.eot?#iefix")
+      format("embedded-opentype"),
+    /* IE6-IE8 */ url("./fonts/roboto-mono/roboto-mono-v12-latin-700.woff2")
+      format("woff2"),
+    /* Super Modern Browsers */
+      url("./fonts/roboto-mono/roboto-mono-v12-latin-700.woff") format("woff"),
+    /* Modern Browsers */
+      url("./fonts/roboto-mono/roboto-mono-v12-latin-700.ttf")
+      format("truetype"),
+    /* Safari, Android, iOS */
+      url("./fonts/roboto-mono/roboto-mono-v12-latin-700.svg#RobotoMono")
+      format("svg"); /* Legacy iOS */
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -10,7 +37,7 @@ body {
   background: #000 url("images/bg.png") no-repeat center center/cover;
   height: 100vh;
   color: #fff;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Roboto Mono", monospace;
   background-attachment: fixed;
 }
 
@@ -23,7 +50,7 @@ a {
 }
 
 .container {
-  max-width: 1100px;
+  max-width: 80%;
   margin: auto;
   padding: 0 20px;
 }
@@ -46,8 +73,9 @@ header img {
 }
 
 .header-title {
+  font-family: "Raider";
   color: rgb(255, 255, 255);
-  font-size: 4em;
+  font-size: 3.5em;
   padding-top: 0;
   padding-bottom: 0.8em;
 }
@@ -61,15 +89,15 @@ header img {
 
 .cards {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1.5rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem 1.5rem;
 }
 
 .card {
   /* width: 280px; */
-  height: 400px;
+  height: 500px;
   border-radius: 15px;
-  padding: 1.5rem;
+  padding: 3rem 1.5em;
   background: white;
   position: relative;
   display: -webkit-box;
@@ -129,10 +157,11 @@ header img {
 }
 .card .info h1 {
   margin: 0px;
+  font-size: 2em;
 }
 .card .info p {
   letter-spacing: 1px;
-  font-size: 15px;
+  font-size: 1.1em;
   margin-top: 8px;
 }
 .card .info .btn {
@@ -171,13 +200,15 @@ header img {
   color: #000;
   display: flex;
   padding: 2rem;
+  margin-bottom: 2em;
+  border-radius: 15px;
   -webkit-box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.5);
   -moz-box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.5);
   box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.5);
 }
 
 .hero-details img {
-  width: 200px;
+  min-width: 260px;
   align-self: center;
 }
 
@@ -198,22 +229,53 @@ header img {
   grid-template-columns: 200px auto;
 }
 
-@media (max-width: 910px) {
-  .cards {
-    grid-template-columns: repeat(3, 1fr);
-  }
+.hero-powers {
+  font-size: 1.2em;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 0.8em;
 }
-@media (max-width: 750px) {
+
+.hero-powers p {
+  margin: 0.5em;
+  padding: 0.5em;
+  background-color: rgb(101, 110, 236);
+  color: #fff;
+  border-radius: 15px;
+}
+
+.back-arrow {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.back-arrow img {
+  min-width: 50px;
+  margin-right: 1rem;
+}
+
+/* responsive */
+
+@media (max-width: 990px) {
+  .container {
+    max-width: 90%;
+  }
   .cards {
     grid-template-columns: repeat(2, 1fr);
-  }
-  .header-title {
-    font-size: 3em;
-    padding-bottom: 0.6em;
   }
   .hero-details {
     flex-direction: column;
   }
+  .hero-details img {
+    margin-bottom: 2em;
+  }
+}
+@media (max-width: 750px) {
+  .header-title {
+    font-size: 3em;
+    padding-bottom: 0.6em;
+  }
+
   .hero-card-info {
     flex-grow: 0;
     padding-left: 0;
@@ -221,7 +283,7 @@ header img {
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 680px) {
   .header-title {
     font-size: 2.5em;
     padding-bottom: 0.5em;

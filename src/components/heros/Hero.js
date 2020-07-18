@@ -6,7 +6,7 @@ const Hero = ({ hero }) => {
   return (
     <div className="card">
       <LazyLoad offset={1200}>
-        <img src={hero.images.sm} alt={hero.name} />
+        <img src={hero.images.lg} alt={hero.name} />
       </LazyLoad>
       <div className="info">
         <h1>{hero.name}</h1>
